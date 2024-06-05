@@ -1,6 +1,36 @@
+from helper import Helper
+
+
 class Data:
-    CREATE_USER_JSON = {
-        "email": "alexey.grishin@ya.ru",
-        "password": "123456789",
-        "name": "Alexey"
+    USER_REGISTRATION_EMPTY_FIELD = [
+        {
+            "email": "",
+            "password": "123456789",
+            "name": "Alexey"
+        },
+        {
+            "email": "alexeyy.grishin@ya.ru",
+            "password": "",
+            "name": "Alexey"
+        },
+        {
+            "email": "alexeyy.grishin@ya.ru",
+            "password": "123456789",
+            "name": ""
+        }
+    ]
+
+    SETTING_EMAIL_OR_PASSWORD = [
+        'email',
+        'password'
+    ]
+
+    FIELD_USER = [
+        'email',
+        'name',
+        'password'
+    ]
+
+    INCORRECT_INGREDIENT = {
+        "ingredients": [""]
     }
