@@ -4,4 +4,4 @@ class Urls:
     DELETE_OR_PATCH_USER_URL = f'{BASE_URL}/auth/user'
     USER_LOGIN_URL = f'{BASE_URL}/auth/login'
     GET_INGREDIENTS_URL = f'{BASE_URL}/ingredients'
-    CREATE_ORDER_URL = f'{BASE_URL}/orders'
+    CREATE_OR_GET_ORDER_URL = f'{BASE_URL}/orders'
