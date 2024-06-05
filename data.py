@@ -1,6 +1,3 @@
-from helper import Helper
-
-
 class Data:
     USER_REGISTRATION_EMPTY_FIELD = [
         {
