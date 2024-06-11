@@ -1,6 +1,5 @@
 import allure
 import pytest
-
 from data import Data
 from burger_api import BurgerApi
 
@@ -17,7 +16,7 @@ class TestUserRegistration:
         second_registration = BurgerApi.create_user(user_data_registration)
         assert (second_registration.status_code == 403
                 and second_registration.json()["success"] is False
-                and second_registration.json()["message"] == "User already exists")
+                and second_registration.json()["message"] == Data.CHECK_ERR_USER_EXIST)
 
     @allure.title('Тест регистрации пользователя с пустым полем email/password/name')
     @allure.description('Ожидаем: статус код 403 и сообщение об ошибке')
@@ -28,4 +27,4 @@ class TestUserRegistration:
         create = BurgerApi.create_user(body)
         assert (create.status_code == 403
                 and create.json()["success"] is False
-                and create.json()["message"] == "Email, password and name are required fields")
+                and create.json()["message"] == Data.CHECK_REQUIRED_FIELDS)

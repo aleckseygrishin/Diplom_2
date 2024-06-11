@@ -1,6 +1,5 @@
 import allure
 import pytest
-
 from burger_api import BurgerApi
 from data import Data
 from helper import Helper
@@ -27,4 +26,4 @@ class TestUserLogin:
         body_changed = Helper.edit_user_data_login_incorrect(user_data_registration, name_field, Data.FIELD_USER[2])
         response = BurgerApi.change_user(body_changed)
         assert (response.status_code == 401 and response.json()["success"] is False
-                and response.json()["message"] == "You should be authorised")
+                and response.json()["message"] == Data.CHECK_ERR_YOU_SHOULD_BE_AUTH)

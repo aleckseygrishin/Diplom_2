@@ -1,6 +1,5 @@
 import allure
 import pytest
-
 from burger_api import BurgerApi
 from helper import Helper
 
@@ -20,17 +19,6 @@ def create_and_delete_user(user_data_registration):
 @pytest.fixture(scope='function')
 def user_data_registration():
     return Helper.random_user()
-
-
-# В документации отсутствует удаление заказа, поэтому return, без удаления
-@allure.step('Вызываем фикстуру (создание заказа, без авторизации)')
-@pytest.fixture(scope='function')
-def create_order():
-    get_ingredients_response = BurgerApi.get_ingredients()
-    order_body = Helper.get_ingredients_list(get_ingredients_response)
-    create_order = BurgerApi.create_order(order_body)
-
-    return create_order
 
 
 @allure.step('Вызываем фикстуру (создание заказа, с авторизацией)')

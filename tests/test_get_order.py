@@ -1,5 +1,5 @@
 import allure
-
+from data import Data
 from helper import Helper
 from burger_api import BurgerApi
 
@@ -17,4 +17,4 @@ class TestGetOrder:
     def test_get_order_user_without_auth_message_error(self, create_and_delete_user, create_order_with_auth):
         response = BurgerApi.get_order_user()
         assert (response.status_code == 401 and response.json()["success"] is False
-                and response.json()["message"] == "You should be authorised")
+                and response.json()["message"] == Data.CHECK_ERR_YOU_SHOULD_BE_AUTH)
